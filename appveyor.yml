@@ -30,7 +30,7 @@ deploy:
       appveyor_repo_tag: true
 
   - provider: GitHub
-    release: v$(GitVersion_FullSemVer)
+    release: v$(GitVersion_SemVer)
     auth_token:
       #fxcopwrapper-bot 2015-01-04
       secure: 3odmfMCz2wNkg3QcYAOAkigftwcjmphWJG6q8b9WTJye/RZUyeevmBIzusJRCxmv
