@@ -10,3 +10,11 @@ configuration: Release
 build:
   project: fxcopwrapper.sln
 
+after_build:
+  - nuget pack src\FxCopWrapper.nuspec -Properties version=%GitVersion_NuGetVersion%;outdir=bin\release
+
+artifacts:
+ - path: *.nupkg
+   name: NuGet
+ - path: src\bin\**\*.zip
+   name: Binaries
