@@ -16,12 +16,12 @@ after_build:
 artifacts:
  - path: fxcopwrapper.*.nupkg
    name: NuGet
- - path: src\bin\**\*.zip
+ - path: src\bin\release\FxCopWrapper*
    name: Binaries
 
 deploy:
   - provider: GitHub
-    release: v$(GitVersion_NuGetVersion)
+    release: v$(GitVersion_FullSemVer)
     auth_token:
       #fxcopwrapper-bot 2015-01-04
       secure: 3odmfMCz2wNkg3QcYAOAkigftwcjmphWJG6q8b9WTJye/RZUyeevmBIzusJRCxmv
