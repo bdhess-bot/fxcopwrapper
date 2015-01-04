@@ -12,3 +12,7 @@ build:
 
 after_build:
   - nuget pack src\FxCopWrapper.nuspec -Properties version=%GitVersion_NuGetVersion%;outdir=bin\release
+
+artifacts:
+ - path: *.nupkg
+   name: NuGet
