@@ -20,6 +20,13 @@ artifacts:
    name: Binaries
 
 deploy:
+  - provider: NuGet
+    server: https://www.nuget.org
+    api_key:
+      secure: +o5S8m7NSWLOFM5hyIhrD+aHdZU2dLn83nCV3zIFV55OMNl5H8q2yRFsFzMMcOWn
+    skip_symbols: true
+    artifact: NuGet
+
   - provider: GitHub
     release: v$(GitVersion_FullSemVer)
     auth_token:
