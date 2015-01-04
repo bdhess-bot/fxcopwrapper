@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rules>
+  <Rule TypeName="LogicInsertionRule" Category="FxCopWrapper" CheckId="LI1001">
+    <Name>Custom logic should be inserted.</Name>
+    <Description>There is a bug in fxcopwrapper if this rule fails.</Description>
+    <Owner>Brad Hess</Owner>
+    <Url>https://github.com/fxcopwrapper</Url>
+    <Resolution>There is a bug in fxcopwrapper if this rule fails.</Resolution>
+    <Email>bradley.d.hess@gmail.com</Email>
+    <MessageLevel Certainty="100">Warning</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+  </Rule>
+</Rules>
