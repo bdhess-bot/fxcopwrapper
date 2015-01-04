@@ -26,6 +26,8 @@ deploy:
       secure: +o5S8m7NSWLOFM5hyIhrD+aHdZU2dLn83nCV3zIFV55OMNl5H8q2yRFsFzMMcOWn
     skip_symbols: true
     artifact: NuGet
+    on:
+      appveyor_repo_tag: true
 
   - provider: GitHub
     release: v$(GitVersion_FullSemVer)
