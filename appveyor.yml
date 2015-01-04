@@ -1,0 +1,39 @@
+install:
+  - git remote set-url origin https://github.com/%APPVEYOR_REPO_NAME%.git
+
+before_build:
+  - nuget restore fxcopwrapper.sln
+
+platform: x86
+configuration: Release
+
+build:
+  project: fxcopwrapper.sln
+
+after_build:
+  - nuget pack src\FxCopWrapper.nuspec -Properties version=%GitVersion_NuGetVersion%;outdir=bin\release
+
+artifacts:
+ - path: fxcopwrapper.*.nupkg
+   name: NuGet
+ - path: src\bin\release\FxCopWrapper*
+   name: Binaries
+
+deploy:
+  - provider: NuGet
+    server: https://www.nuget.org
+    api_key:
+      secure: +o5S8m7NSWLOFM5hyIhrD+aHdZU2dLn83nCV3zIFV55OMNl5H8q2yRFsFzMMcOWn
+    skip_symbols: true
+    artifact: NuGet
+
+  - provider: GitHub
+    release: v$(GitVersion_FullSemVer)
+    auth_token:
+      #fxcopwrapper-bot 2015-01-04
+      secure: 3odmfMCz2wNkg3QcYAOAkigftwcjmphWJG6q8b9WTJye/RZUyeevmBIzusJRCxmv
+    artifact: NuGet,Binaries
+    draft: false
+    prerelease: false
+    on:
+      appveyor_repo_tag: true

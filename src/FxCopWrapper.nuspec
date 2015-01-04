@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package>
+  <metadata>
+    <id>fxcopwrapper</id>
+    <version>$version$</version>
+    <title>FxCopWrapper</title>
+    <authors>Brad Hess</authors>
+    <owners>Brad Hess</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Overrides for FxCop style rules.</description>
+    <projectUrl>https://github.com/bdhess/fxcopwrapper</projectUrl>
+    <developmentDependency>true</developmentDependency>
+    <tags>Build MSBuild FxCop Code Analysis</tags>
+  </metadata>
+  <files>
+    <file src="FxCopWrapper.props" target="build" />
+    <file src="$outdir$\FxCopWrapper.dll" target="tools" />
+  </files>
+</package>
