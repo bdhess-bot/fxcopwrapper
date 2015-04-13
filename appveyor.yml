@@ -33,8 +33,8 @@ deploy:
   - provider: GitHub
     release: v$(GitVersion_SemVer)
     auth_token:
-      #fxcopwrapper-bot 2015-01-04
-      secure: 3odmfMCz2wNkg3QcYAOAkigftwcjmphWJG6q8b9WTJye/RZUyeevmBIzusJRCxmv
+      #bdhess-bot 2015-04-13
+      secure: xbPXf7huVM5TwkHbgC9L1vb5qe/7a5wlMqOrpArzXslYOfiUYTsjDCseoHSmPlhh
     artifact: NuGet,Binaries
     draft: false
     prerelease: false
